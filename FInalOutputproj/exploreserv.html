@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Combined HTML and CSS</title>
+<style>
+body {
+    padding:0;
+    margin:0;
+    font-family:sans-serif;
+}
+
+.container { 
+    position:relative;
+    width:1200px;
+    height:300px;
+    margin:120px auto;
+}
+
+.container .box {
+    position:relative;
+    width:calc(370px - 30px);
+    height:calc(400px - 30px);
+    background:#000;
+    float:left;
+    overflow:hidden;
+    margin:15px;
+    border-radius:10px;
+    box-sizing:border-box;
+}
+
+.container .box .icon {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#f00;
+    z-index:1;
+    transition:0.5s;
+}
+
+.container .box:hover .icon {
+    top:20px;
+    left:calc(50% - 40px);
+    border-radius:50%;
+    width:80px;
+    height:80px;  
+}
+
+.container .box .icon .fa {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    color:#fff;
+    font-size:80px;
+    transition:0.5s;
+}
+
+.container .box:hover .icon .fa {
+    font-size:40px;
+}
+
+.container .box .content {
+    position:absolute;
+    top:100%;
+    height:calc(100% - 100px);
+    padding:20px;
+    box-sizing:border-box;
+    transition:0.5s;
+    opacity:0;
+}
+
+.container .box:hover .content {
+    top:100px;
+    opacity:1;
+}
+
+.container .box .content h3 ,
+.container .box .content p {
+    text-align: center;
+    padding:0;
+    margin:0;
+    color:#fff;
+}
+
+.container .box .content h3 {
+    margin-bottom:10px;
+    font-size: 24px;
+}
+
+.container .box:nth-child(1) .icon {
+    background:#319635;
+}
+
+.container .box:nth-child(1) {
+    background:#4caf50;
+}
+
+.container .box:nth-child(2) .icon {
+    background:#d03852;
+}
+
+.container .box:nth-child(2) {
+    background:#f54967;
+}
+
+.container .box:nth-child(3) .icon {
+    background:#23798e;
+}
+
+.container .box:nth-child(3) {
+    background:#328fa5;
+}
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="The Mental Health Awareness Organization (MHA Org) helps spread awareness and shed light to different mental health problems, the various ways to cope with them, how to help others who might be struggling, and how to spread awareness yourself.">
+    <meta name="keywords" content="Mental, Health, Awareness, Help, Depression, Anxiety, PTSD">
+    <meta name="author" content="Madyar Kozhakhmetov">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap link below -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- FontAwesome link below -->
+    <script src="https://use.fontawesome.com/5d5a7b196b.js"></script>
+    <!-- Google Fonts link below -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"> 
+    <!-- Favicon link below -->
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico" type="image/x-icon">
+    <!-- CSS link below -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <title>Mental Health Awareness Organization</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg my-0 navbar-light" id="custom-nav-css"> <!-- navbar uses bootstrap code seen as seen in https://getbootstrap.com/docs/4.0/components/navbar/ -->
+        <div class="container-fluid"> 
+            <a class="navbar-brand active" href="index(proj).html" id="custom-navbar-brand-mobile-responsiveness">
+                <img src="assets/images/hugging.png" class="d-inline-block align-top" alt="Mental Health Awareness Organization logo" loading="lazy">
+                MHA Organization
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggler">
+                <ul class="nav navbar-nav mx-auto">
+                    <li><a class="nav-link mha-nav" href="about_ourselves.html">About us</a></li>
+                    <li><a class="nav-link mha-nav" href="online_therapy.html">Online therapy</a></li>
+                    <li><a class="nav-link mha-nav" href="consultation.html">Consultation</a></li>
+                    <li><a class="nav-link mha-nav" href="exploreserv.html">Our services</a></li> 
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="nav-link mha-nav" href="sign-in.html">Sign In <span id="mha-navbar-right-space"> | </span> Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+        </nav>
+    </header>
+    <section id="help-yourself-title">
+        <div>Explore our comprehensive services that range from expert clinical assessments to therapeutic support.</div>
+    </section>
+    
+    <div class="container">
+        <div class="box">
+            <div class="icon"><i class="fa fa-user"></i></div>
+            <div class="content">
+                <h3>Individual Therapy</h3>
+                <p>Our one-on-one therapy sessions offer a safe and confidential space for you to explore your thoughts, feelings, and concerns. Our licensed therapists work collaboratively with you to develop effective strategies for managing stress and other challenges.</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="icon"><i class="fa fa-user"></i></div>
+            <div class="content">
+                <h3>COUPLES THERAPY</h3>
+                <p>Strengthen your relationship and improve communication with our couples therapy services. Our skilled therapists guide you and your partner toward greater understanding, healthier dynamics, and enhanced intimacy</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="icon"><i class="fa fa-users"></i></div>
+            <div class="content">
+                <h3>GROUP THERAPY</h3>
+                <p>We offer on-line and in person DBT skills training groups for rangatahi aged 12-24. Connect with others who share similar experiences in our skills training groups. These supportive and engaging groups provide a platform to gain insights.</p>
+            </div>
+        </div>   
+    </div>
